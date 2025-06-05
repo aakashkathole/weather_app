@@ -4,6 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:dio/dio.dart';  // Dio
 import '../services/weather_service.dart';
 import '../models/weather_model.dart';
+import 'new_page.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -472,7 +473,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  ElevatedButton(
+              child: Text("Go to New Page"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return NewPage();
+                          },
+                        ),
+                      );
+
+                    },
+        ),
+                ],
+              ),
+              const SizedBox(height: 80,),
               Row(
                 children: [
                   Text(
